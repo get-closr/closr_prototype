@@ -74,6 +74,4 @@
 /android/app/src/prod/google-services.json
 ios/Runner/Firebase/prod/GoogleService-Info.plist
 ios/Runner/Firebase/dev/GoogleService-Info.plist
-/ios/Runner/GoogleService-Info.plist
-/lib/assets/
-/lib/untracked
+ios/Runner/GoogleService-Info.plist
