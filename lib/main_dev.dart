@@ -5,7 +5,7 @@ import 'resources/app_config.dart';
 void main(){
   var configuredApp = AppConfig(
     appTitle: "Closr Prototype Dev",
-    buildFlavor: "Developement",
+    buildFlavor: "Development",
     child: MyApp(),
   );
 

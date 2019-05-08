@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:closr_prototype/resources/app_config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-//TODO:Use as debug page to print firebase setup details before going to login page
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 

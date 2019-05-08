@@ -75,5 +75,5 @@
 ios/Runner/Firebase/prod/GoogleService-Info.plist
 ios/Runner/Firebase/dev/GoogleService-Info.plist
 /ios/Runner/GoogleService-Info.plist
-**/lib/asset/
-**/lib/untracked
+/lib/assets/
+/lib/untracked
