@@ -1,3 +1,4 @@
+import 'package:closr_prototype/ui/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,9 +8,10 @@ import 'package:closr_prototype/authentication_bloc/bloc.dart';
 import 'package:closr_prototype/utils/app_config.dart';
 import 'package:closr_prototype/utils/user_repository.dart';
 
-import 'package:closr_prototype/ui/screens/home_screen.dart';
 import 'package:closr_prototype/ui/screens/splash_screen.dart';
+import 'package:closr_prototype/ui/theme/theme.dart';
 
+import 'closr_main.dart';
 import 'login/login_screen.dart';
 
 
@@ -36,9 +38,7 @@ class _ClosrAppState extends State<ClosrApp> {
       bloc: _authenticationBloc,
       child: MaterialApp(
         title: AppConfig.of(context).appTitle,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: buildClosrTheme(1),
         home: BlocBuilder(
           bloc: _authenticationBloc,
           builder: (BuildContext context, AuthenticationState state) {
@@ -49,7 +49,9 @@ class _ClosrAppState extends State<ClosrApp> {
               return LoginScreen(userRepository: _userRepository);
             }
             if (state is Authenticated) {
-              return HomeScreen(name: state.displayName);
+              // return HomeScreen(name: state.displayName);
+              // print(state.displayName);
+              return ClosrMain(name: state.displayName);
             }
           },
         ),
