@@ -1,3 +1,4 @@
+import 'package:closr_prototype/ui/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:closr_prototype/utils/pages.dart';
 import 'package:closr_prototype/ui/screens/home_screen.dart';
@@ -18,6 +19,8 @@ class Directory extends StatelessWidget {
       case Pages.home:
         return HomeScreen(name: this.name,);
         break;
+      case Pages.chat:
+        return ChatScreen();
       default:
         return NoContent();
     }

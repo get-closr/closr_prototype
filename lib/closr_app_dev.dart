@@ -14,7 +14,6 @@ import 'package:closr_prototype/ui/theme/theme.dart';
 import 'closr_main.dart';
 import 'login/login_screen.dart';
 
-
 class ClosrApp extends StatefulWidget {
   ClosrApp({Key key}) : super(key: key);
 
@@ -49,8 +48,6 @@ class _ClosrAppState extends State<ClosrApp> {
               return LoginScreen(userRepository: _userRepository);
             }
             if (state is Authenticated) {
-              // return HomeScreen(name: state.displayName);
-              // print(state.displayName);
               return ClosrMain(name: state.displayName);
             }
           },

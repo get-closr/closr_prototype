@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:closr_prototype/utils/user_repository.dart';
 import 'package:closr_prototype/register/register.dart';
 
+
 class RegisterScreen extends StatefulWidget {
   final UserRepository _userRepository;
 
@@ -29,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Register')),
+      // appBar: AppBar(title: Text('Register')),
       body: Center(
         child: BlocProvider<RegisterBloc>(
           bloc: _registerBloc,

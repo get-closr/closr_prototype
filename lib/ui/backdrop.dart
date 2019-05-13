@@ -83,7 +83,7 @@ class _BackdropTile extends AnimatedWidget {
                     translation:
                         Tween<Offset>(begin: Offset.zero, end: Offset(1, 0))
                             .evaluate(animation),
-                    child: ImageIcon(AssetImage('assets/images/diamond.png')),
+                    child: ImageIcon(AssetImage('assets/images/ruby-gemstone.png')),
                   ),
                 ],
               ),
@@ -226,6 +226,7 @@ class _BackdropState extends State<Backdrop>
     return iconList[status];
   }
 
+
   @override
   Widget build(BuildContext context) {
     var appBar = AppBar(
@@ -259,7 +260,9 @@ class _BackdropState extends State<Backdrop>
       ],
     );
     return Scaffold(
-      appBar: appBar,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(40.0),
+        child: appBar),
       body: LayoutBuilder(
         builder: _buildStack,
       ),
