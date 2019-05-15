@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 
-import 'package:closr_prototype/utils/simple_bloc_delegate.dart';
-import 'package:closr_prototype/utils/app_config.dart';
+import 'package:closr_prototype/src/utils/simple_bloc_delegate.dart';
+import 'package:closr_prototype/src/utils/app_config.dart';
 
-import 'package:closr_prototype/closr_app_prod.dart';
+import 'package:closr_prototype/src/closr_app_prod.dart';
 
 void main(){
   BlocSupervisor().delegate = SimpleBlocDelegate();

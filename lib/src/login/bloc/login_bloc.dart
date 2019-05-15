@@ -3,10 +3,10 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 
-import 'package:closr_prototype/utils/user_repository.dart';
-import 'package:closr_prototype/utils/validators.dart';
+import 'package:closr_prototype/src/utils/user_repository.dart';
+import 'package:closr_prototype/src/utils/validators.dart';
 
-import 'package:closr_prototype/login/login.dart';
+import 'package:closr_prototype/src/login/login.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   UserRepository _userRepository;

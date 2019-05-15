@@ -1,5 +1,5 @@
-import 'package:closr_prototype/ui/theme/color.dart';
-import 'package:closr_prototype/ui/theme/theme.dart';
+import 'package:closr_prototype/src/ui/theme/color.dart';
+import 'package:closr_prototype/src/ui/theme/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -43,7 +43,6 @@ class _ChatScreenState extends State<ChatScreen> {
       for (var message in snapshot.documents) {
         print(message.data);
       }
-      ;
     }
   }
 

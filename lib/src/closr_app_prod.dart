@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:closr_prototype/authentication_bloc/bloc.dart';
+import 'package:closr_prototype/src/authentication_bloc/bloc.dart';
 
-import 'package:closr_prototype/utils/app_config.dart';
-import 'package:closr_prototype/utils/user_repository.dart';
+import 'package:closr_prototype/src/utils/app_config.dart';
+import 'package:closr_prototype/src/utils/user_repository.dart';
 
-import 'package:closr_prototype/ui/screens/prod/home_screen.dart';
-import 'package:closr_prototype/ui/screens/splash_screen.dart';
+import 'package:closr_prototype/src/ui/screens/prod/home_screen.dart';
+import 'package:closr_prototype/src/ui/screens/splash_screen.dart';
 
 import 'login/login_screen.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:closr_prototype/ui/backdrop.dart';
-import 'package:closr_prototype/ui/screens/menu_page.dart';
+import 'package:closr_prototype/src/ui/backdrop.dart';
+import 'package:closr_prototype/src/ui/screens/menu_page.dart';
 
 
-import 'package:closr_prototype/utils/pages.dart';
-import 'package:closr_prototype/utils/directory.dart';
+import 'package:closr_prototype/src/utils/pages.dart';
+import 'package:closr_prototype/src/utils/directory.dart';
 
 
 class ClosrMain extends StatefulWidget {

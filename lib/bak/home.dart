@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:closr_prototype/utils/app_config.dart';
+import 'package:closr_prototype/src/utils/app_config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MyHomePage extends StatefulWidget {

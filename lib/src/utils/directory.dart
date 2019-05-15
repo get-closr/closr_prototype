@@ -1,9 +1,9 @@
-import 'package:closr_prototype/ui/screens/chat_screen.dart';
+import 'package:closr_prototype/src/ui/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:closr_prototype/utils/pages.dart';
-import 'package:closr_prototype/ui/screens/home_screen.dart';
+import 'package:closr_prototype/src/utils/pages.dart';
+import 'package:closr_prototype/src/ui/screens/home_screen.dart';
 
-import 'package:closr_prototype/ui/screens/no_content.dart';
+import 'package:closr_prototype/src/ui/screens/no_content.dart';
 
 
 class Directory extends StatelessWidget {
