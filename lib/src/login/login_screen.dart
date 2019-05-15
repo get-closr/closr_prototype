@@ -30,7 +30,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text('Login')),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        brightness: Brightness.light,
+      ),
       body: BlocProvider<LoginBloc>(
         bloc: _loginBloc,
         child: LoginForm(userRepository: _userRepository),

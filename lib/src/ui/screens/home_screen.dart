@@ -10,15 +10,31 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Stack(
           children: <Widget>[
-            Text('Welcome $name!'),
-            Text('Setup Your Jewellery'),
-            Text('Complete Your Profile'),
-            Text('Invite Your Partner'),
-            Text('Relinquish Control'),
-            Text('Start Playing')
+            Align(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('Welcome $name!'),
+                    Text('Setup Your Jewellery'),
+                    Text('Complete Your Profile'),
+                    Text('Invite Your Partner'),
+                    Text('Relinquish Control'),
+                    Text('Start Playing'),
+                  ]),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              heightFactor: 13,
+              widthFactor: 6.5,
+              child: FloatingActionButton(
+                onPressed: () {},
+                child: Icon(Icons.ac_unit),
+                foregroundColor: Theme.of(context).hintColor,
+                backgroundColor: Theme.of(context).buttonColor,
+              ),
+            ),
           ],
         ),
       ),

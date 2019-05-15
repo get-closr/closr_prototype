@@ -34,7 +34,7 @@ class AuthenticationBloc
     try {
       final isSignedIn = await _userRepository.isSignedIn();
       if (isSignedIn) {
-        final name = await _userRepository.getUser();
+        final name = await _userRepository.getUserEmail();
         yield Authenticated(name);
       } else {
         yield Unauthenticated();
@@ -45,7 +45,7 @@ class AuthenticationBloc
   }
 
   Stream<AuthenticationState> _mapLoggedInToState() async* {
-    yield Authenticated(await _userRepository.getUser());
+    yield Authenticated(await _userRepository.getUserEmail());
   }
 
   Stream<AuthenticationState> _mapLoggedOutToState() async* {

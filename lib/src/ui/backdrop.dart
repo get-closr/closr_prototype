@@ -22,6 +22,7 @@ class _FrontLayer extends StatelessWidget {
       elevation: 16.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(40)),
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -32,7 +33,7 @@ class _FrontLayer extends StatelessWidget {
               height: 40.0,
               alignment: AlignmentDirectional.centerStart,
             ),
-          ),
+          ), //Todo. On swipedown gestureDetect
           Expanded(
             child: child,
           )
