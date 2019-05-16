@@ -30,13 +30,7 @@ dependencies:
   equatable: ^0.2.3
 
   font_awesome_flutter: ^8.4.0
-  flutter_launcher_icons: ^0.7.0
-
-flutter_icons:
-  image_path_android: "assets/images/ic_launcher.png"
-  image_path_ios: "assets/images/closr_icon-ios.png"
-  android: true
-  ios: true
+  
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -57,10 +51,8 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/Closr_grey_01.png
-    - assets/images/slanted_menu.png
-    - assets/images/diamond.png
-    - assets/images/ruby-gemstone.png
+    - assets/images/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
