@@ -10,7 +10,7 @@ import 'package:closr_prototype/src/utils/user_repository.dart';
 import 'package:closr_prototype/src/ui/screens/prod/home_screen.dart';
 import 'package:closr_prototype/src/ui/screens/splash_screen.dart';
 
-import 'login/login_screen.dart';
+import 'package:closr_prototype/src/login/login_screen.dart';
 
 
 class ClosrApp extends StatefulWidget {

@@ -11,8 +11,8 @@ import 'package:closr_prototype/src/utils/user_repository.dart';
 import 'package:closr_prototype/src/ui/screens/splash_screen.dart';
 import 'package:closr_prototype/src/ui/theme/theme.dart';
 
+import 'package:closr_prototype/src/login/login_screen.dart';
 import 'closr_main.dart';
-import 'login/login_screen.dart';
 
 class ClosrApp extends StatefulWidget {
   ClosrApp({Key key}) : super(key: key);
