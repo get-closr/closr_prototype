@@ -1,20 +1,21 @@
+import 'package:closr_prototype/bloc_test/ui/theme/theme.dart';
+import 'package:closr_prototype/src/locator.dart';
+import 'package:closr_prototype/src/ui/router.dart';
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
 
-import 'package:closr_prototype/src/utils/simple_bloc_delegate.dart';
-import 'package:closr_prototype/src/utils/app_config.dart';
+void main() {
+  setupLocator();
+  runApp(MyApp());
+}
 
-import 'package:closr_prototype/src/app/closr_app_dev.dart';
-
-
-void main(){
-  BlocSupervisor().delegate = SimpleBlocDelegate();
-
-  var configuredApp = AppConfig(
-    appTitle: "Closr Prototype Dev",
-    buildFlavor: "Development",
-    child: ClosrApp(),
-  );
-
-  return runApp(configuredApp);
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Material App',
+      theme: buildClosrTheme(1),
+      initialRoute: '/login',
+      onGenerateRoute: Router.generateRoute,
+    );
+  }
 }

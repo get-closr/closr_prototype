@@ -22,7 +22,6 @@ ThemeData buildClosrTheme(theme) {
     primaryColor: primaryColorHolder,
     buttonColor: buttonColorHolder,
     scaffoldBackgroundColor: scaffoldBackgroundColorHolder,
-
     cardColor: kClosrBackgroundWhite,
 
     //Error

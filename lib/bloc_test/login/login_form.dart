@@ -90,7 +90,7 @@ class _LoginFormState extends State<LoginForm> {
                     tag: 'logo',
                     child: Container(
                         height: 200,
-                        child: Image.asset('assets/images/Closr_grey_01.png')),
+                        child: Image.asset('assets/images/Closr_logo.png')),
                   ),
                 ),
                 TextFormField(
