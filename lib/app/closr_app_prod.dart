@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:closr_prototype/src/authentication_bloc/bloc.dart';
+import 'package:closr_prototype/bloc_test/authentication_bloc/bloc.dart';
 
-import 'package:closr_prototype/src/utils/app_config.dart';
-import 'package:closr_prototype/src/utils/user_repository.dart';
+import 'package:closr_prototype/bloc_test/utils/app_config.dart';
+import 'package:closr_prototype/bloc_test/utils/user_repository.dart';
 
-import 'package:closr_prototype/src/ui/screens/prod/home_screen.dart';
-import 'package:closr_prototype/src/ui/screens/splash_screen.dart';
+import 'package:closr_prototype/bloc_test/ui/screens/prod/home_screen.dart';
+import 'package:closr_prototype/bloc_test/ui/screens/splash_screen.dart';
 
-import 'package:closr_prototype/src/login/login_screen.dart';
+import 'package:closr_prototype/bloc_test/login/login_screen.dart';
 
 
 class ClosrApp extends StatefulWidget {

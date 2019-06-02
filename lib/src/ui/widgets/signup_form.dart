@@ -1,20 +1,25 @@
 import 'package:closr_prototype/src/core/models/user.dart';
+import 'package:closr_prototype/src/core/viewmodels/login_model.dart';
 import 'package:closr_prototype/src/ui/shared/ui_helpers.dart';
 import 'package:closr_prototype/src/ui/widgets/password.dart';
 import 'package:closr_prototype/src/utils/validators.dart';
 
 import 'package:flutter/material.dart';
 
-class SignupFields extends StatefulWidget {
-  const SignupFields({Key key}) : super(key: key);
+class SignupForm extends StatefulWidget {
+  final LoginModel model;
+
+  const SignupForm({this.model});
 
   @override
-  _SignupFieldsState createState() => _SignupFieldsState();
+  _SignupFormState createState() => _SignupFormState();
 }
 
-class _SignupFieldsState extends State<SignupFields> {
+class _SignupFormState extends State<SignupForm> {
   TextEditingController _email;
-  // TextEditingController _password;
+  TextEditingController _password;
+
+  final _formKey = GlobalKey<FormState>();
   final _passwordFieldKey = GlobalKey<FormFieldState<String>>();
   bool _formWasEditted = false;
 
@@ -27,27 +32,30 @@ class _SignupFieldsState extends State<SignupFields> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        emailInput(),
-        UIHelper.verticalSpaceSmall(),
-        PasswordField(
-          fieldKey: _passwordFieldKey,
-          helperText: 'No more than 8 characters',
-          labelText: 'Password *',
-          onFieldSubmitted: (value) {},
-        ),
-        TextFormField(
-          decoration: InputDecoration(
-            labelText: "Confirm Password",
-            prefixIcon: Icon(Icons.lock_outline),
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          emailInput(),
+          UIHelper.verticalSpaceSmall(),
+          PasswordField(
+            fieldKey: _passwordFieldKey,
+            helperText: 'No more than 8 characters',
+            labelText: 'Password *',
+            onFieldSubmitted: (value) {},
           ),
-          maxLength: 8,
-          obscureText: true,
-        ),
-        UIHelper.verticalSpaceMedium(),
-      ],
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: "Confirm Password",
+              prefixIcon: Icon(Icons.lock_outline),
+            ),
+            maxLength: 8,
+            obscureText: true,
+          ),
+          UIHelper.verticalSpaceMedium(),
+        ],
+      ),
     );
   }
 

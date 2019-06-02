@@ -2,8 +2,10 @@ import 'package:closr_prototype/src/core/viewmodels/login_model.dart';
 import 'package:closr_prototype/src/locator.dart';
 import 'package:closr_prototype/src/ui/shared/app_colors.dart';
 import 'package:closr_prototype/src/ui/shared/color.dart';
-import 'package:closr_prototype/src/ui/widgets/login_fields.dart';
-import 'package:closr_prototype/src/ui/widgets/signup_fields.dart';
+import 'package:closr_prototype/src/ui/widgets/login_form.dart';
+import 'package:closr_prototype/src/ui/widgets/signup_form.dart';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -35,10 +37,9 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                       model.mode == FormMode.Login
-                          ? LoginFields()
-                          : SignupFields(),
-                      primaryButton(model),
-                      googleLoginButton(context,model),
+                          ? LoginForm(model: model)
+                          : SignupForm(model: model),
+                      googleLoginButton(context, model),
                       switchButton(model),
                     ],
                   ),
@@ -46,17 +47,6 @@ class LoginView extends StatelessWidget {
               ),
             ),
       ),
-    );
-  }
-
-  Widget primaryButton(model) {
-    return RaisedButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
-      ),
-      child:
-          model.mode == FormMode.Login ? Text('Login') : Text('Create Account'),
-      onPressed: () async {},
     );
   }
 
@@ -75,7 +65,7 @@ class LoginView extends StatelessWidget {
       color: Theme.of(context).buttonColor,
       onPressed: () async {
         var loginSuccess = await model.signInWithGoogle();
-        if (loginSuccess){
+        if (loginSuccess) {
           Navigator.pushNamed(context, '/');
         }
       },

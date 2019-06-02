@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:closr_prototype/src/authentication_bloc/authentication_bloc.dart';
-import 'package:closr_prototype/src/authentication_bloc/authentication_event.dart';
+import 'package:closr_prototype/bloc_test/authentication_bloc/authentication_bloc.dart';
+import 'package:closr_prototype/bloc_test/authentication_bloc/authentication_event.dart';
 
-import 'package:closr_prototype/src/utils/pages.dart';
+import 'package:closr_prototype/bloc_test/utils/pages.dart';
 
 
 const double _kFlingVelocity = 2.0;
