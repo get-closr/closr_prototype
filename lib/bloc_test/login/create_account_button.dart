@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:closr_prototype/src/utils/user_repository.dart';
-import 'package:closr_prototype/src/register/register.dart';
+import 'package:closr_prototype/bloc_test/utils/user_repository.dart';
+import 'package:closr_prototype/bloc_test/register/register.dart';
 
 class CreateAccountButton extends StatelessWidget {
   final UserRepository _userRepository;

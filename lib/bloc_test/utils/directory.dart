@@ -1,12 +1,12 @@
-import 'package:closr_prototype/src/utils/user_repository.dart';
+import 'package:closr_prototype/bloc_test/utils/user_repository.dart';
 import 'package:flutter/material.dart';
 
-import 'package:closr_prototype/src/utils/pages.dart';
+import 'package:closr_prototype/bloc_test/utils/pages.dart';
 
-import 'package:closr_prototype/src/ui/screens/account_screen.dart';
-import 'package:closr_prototype/src/ui/screens/chat_screen.dart';
-import 'package:closr_prototype/src/ui/screens/home_screen.dart';
-import 'package:closr_prototype/src/ui/screens/no_content.dart';
+import 'package:closr_prototype/bloc_test/ui/screens/account_screen.dart';
+import 'package:closr_prototype/bloc_test/ui/screens/chat_screen.dart';
+import 'package:closr_prototype/bloc_test/ui/screens/home_screen.dart';
+import 'package:closr_prototype/bloc_test/ui/screens/no_content.dart';
 
 class Directory extends StatelessWidget {
   final Pages page;

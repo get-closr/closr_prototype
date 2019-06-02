@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:closr_prototype/src/utils/pages.dart';
-import 'package:closr_prototype/src/ui/theme/color.dart';
+import 'package:closr_prototype/bloc_test/utils/pages.dart';
+import 'package:closr_prototype/bloc_test/ui/theme/color.dart';
 
 class MenuPage extends StatelessWidget {
   final Pages currentPage;

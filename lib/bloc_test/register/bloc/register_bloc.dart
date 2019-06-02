@@ -3,10 +3,10 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 
-import 'package:closr_prototype/src/utils/user_repository.dart';
-import 'package:closr_prototype/src/utils/validators.dart';
+import 'package:closr_prototype/bloc_test/utils/user_repository.dart';
+import 'package:closr_prototype/bloc_test/utils/validators.dart';
 
-import 'package:closr_prototype/src/register/register.dart';
+import 'package:closr_prototype/bloc_test/register/register.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   final UserRepository _userRepository;

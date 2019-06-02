@@ -1,4 +1,4 @@
-import 'package:closr_prototype/bloc_test/ui/theme/theme.dart';
+import 'package:closr_prototype/src/ui/shared/theme.dart';
 import 'package:closr_prototype/src/locator.dart';
 import 'package:closr_prototype/src/ui/router.dart';
 import 'package:flutter/material.dart';

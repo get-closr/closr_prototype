@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:closr_prototype/src/ui/theme/color.dart';
-import 'package:closr_prototype/src/ui/theme/theme.dart';
-import 'package:closr_prototype/src/utils/user_repository.dart';
+import 'package:closr_prototype/bloc_test/ui/theme/color.dart';
+import 'package:closr_prototype/bloc_test/ui/theme/theme.dart';
+import 'package:closr_prototype/bloc_test/utils/user_repository.dart';
 
 final _firestore = Firestore.instance;
 FirebaseUser loggedInUser;

@@ -1,5 +1,5 @@
-import 'package:closr_prototype/src/ui/theme/theme.dart';
-import 'package:closr_prototype/src/utils/app_config.dart';
+import 'package:closr_prototype/bloc_test/ui/theme/theme.dart';
+import 'package:closr_prototype/bloc_test/utils/app_config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

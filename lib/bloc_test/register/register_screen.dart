@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:closr_prototype/src/utils/user_repository.dart';
-import 'package:closr_prototype/src/register/register.dart';
+import 'package:closr_prototype/bloc_test/utils/user_repository.dart';
+import 'package:closr_prototype/bloc_test/register/register.dart';
 
 
 class RegisterScreen extends StatefulWidget {
