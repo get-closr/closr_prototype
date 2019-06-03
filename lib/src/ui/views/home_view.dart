@@ -9,7 +9,17 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Sliver App Bar"),
-        actions: <Widget>[Icon(Icons.exit_to_app)],
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.exit_to_app,
+                semanticLabel: 'Sign Out',
+              ),
+              onPressed: () {
+                //signOut
+                Navigator.pushNamed(context, '/login');
+              }),
+        ],
       ),
       body: Center(
         child: Column(
