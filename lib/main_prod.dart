@@ -6,11 +6,12 @@ import 'package:closr_prototype/bloc_test/utils/app_config.dart';
 
 import 'package:closr_prototype/app/closr_app_prod.dart';
 
+
 void main(){
   BlocSupervisor().delegate = SimpleBlocDelegate();
 
   var configuredApp = AppConfig(
-    appTitle: "Closr Prototype",
+    appTitle: "Closr Prototype Production",
     buildFlavor: "Production",
     child: ClosrApp(),
   );

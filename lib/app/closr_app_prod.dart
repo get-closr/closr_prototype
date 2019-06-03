@@ -1,3 +1,4 @@
+// import 'package:closr_prototype/bloc_test/ui/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,11 +8,11 @@ import 'package:closr_prototype/bloc_test/authentication_bloc/bloc.dart';
 import 'package:closr_prototype/bloc_test/utils/app_config.dart';
 import 'package:closr_prototype/bloc_test/utils/user_repository.dart';
 
-import 'package:closr_prototype/bloc_test/ui/screens/prod/home_screen.dart';
 import 'package:closr_prototype/bloc_test/ui/screens/splash_screen.dart';
+import 'package:closr_prototype/bloc_test/ui/theme/theme.dart';
 
 import 'package:closr_prototype/bloc_test/login/login_screen.dart';
-
+import 'closr_main.dart';
 
 class ClosrApp extends StatefulWidget {
   ClosrApp({Key key}) : super(key: key);
@@ -36,9 +37,7 @@ class _ClosrAppState extends State<ClosrApp> {
       bloc: _authenticationBloc,
       child: MaterialApp(
         title: AppConfig.of(context).appTitle,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: buildClosrTheme(1),
         home: BlocBuilder(
           bloc: _authenticationBloc,
           builder: (BuildContext context, AuthenticationState state) {
@@ -49,7 +48,7 @@ class _ClosrAppState extends State<ClosrApp> {
               return LoginScreen(userRepository: _userRepository);
             }
             if (state is Authenticated) {
-              return HomeScreen(name: state.displayName);
+              return ClosrMain(name: state.displayName);
             }
           },
         ),
