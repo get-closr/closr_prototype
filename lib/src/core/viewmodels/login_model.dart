@@ -1,10 +1,8 @@
+import 'package:closr_prototype/src/core/enums/form_mode.dart';
+import 'package:closr_prototype/src/core/enums/view_state.dart';
 import 'package:closr_prototype/src/core/services/user_repository.dart';
 import 'package:closr_prototype/src/locator.dart';
 import 'package:flutter/foundation.dart';
-
-enum ViewState { Idle, Busy }
-
-enum FormMode { Login, Signup }
 
 class LoginModel extends ChangeNotifier {
   final UserRepository _userRepository = locator<UserRepository>();
@@ -38,7 +36,7 @@ class LoginModel extends ChangeNotifier {
   Future<bool> signIn(String email, String password) async {
     setState(ViewState.Busy);
     var user = await _userRepository.signInWithCredentials(email, password);
-    if (user == null){
+    if (user == null) {
       print("user does not exist");
       setState(ViewState.Idle);
       return false;
@@ -50,7 +48,7 @@ class LoginModel extends ChangeNotifier {
   Future<bool> signInWithGoogle() async {
     setState(ViewState.Busy);
     var user = await _userRepository.signInWithGoogle();
-    if (user == null){
+    if (user == null) {
       print("user does not exist");
       setState(ViewState.Idle);
       return false;

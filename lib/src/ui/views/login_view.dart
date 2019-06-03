@@ -1,7 +1,6 @@
+import 'package:closr_prototype/src/core/enums/form_mode.dart';
 import 'package:closr_prototype/src/core/viewmodels/login_model.dart';
 import 'package:closr_prototype/src/locator.dart';
-import 'package:closr_prototype/src/ui/shared/app_colors.dart';
-import 'package:closr_prototype/src/ui/shared/color.dart';
 import 'package:closr_prototype/src/ui/widgets/login_form.dart';
 import 'package:closr_prototype/src/ui/widgets/signup_form.dart';
 
@@ -17,7 +16,12 @@ class LoginView extends StatelessWidget {
       builder: (context) => locator<LoginModel>(),
       child: Consumer<LoginModel>(
         builder: (context, model, child) => Scaffold(
-              backgroundColor: backgroundColor,
+              appBar: AppBar(
+                brightness: Brightness.light,
+                backgroundColor: Colors.transparent,
+                elevation: 0.0,
+                automaticallyImplyLeading: false,
+              ),
               body: Form(
                 child: Padding(
                   padding: EdgeInsets.all(50),
@@ -55,14 +59,15 @@ class LoginView extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0),
       ),
-      icon: Icon(FontAwesomeIcons.google, color: kClosrBrown900),
+      icon: Icon(FontAwesomeIcons.google, color: Colors.white),
       label: Text(
         'Sign in with Google',
         style: TextStyle(
-          color: kClosrBrown900,
+          color: Colors.white,
         ),
       ),
-      color: Theme.of(context).buttonColor,
+      // color: Theme.of(context).buttonColor,
+      color: Colors.redAccent,
       onPressed: () async {
         var loginSuccess = await model.signInWithGoogle();
         if (loginSuccess) {

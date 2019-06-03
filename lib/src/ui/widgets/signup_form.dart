@@ -1,7 +1,7 @@
 import 'package:closr_prototype/src/core/models/user.dart';
 import 'package:closr_prototype/src/core/viewmodels/login_model.dart';
 import 'package:closr_prototype/src/ui/shared/ui_helpers.dart';
-import 'package:closr_prototype/src/ui/widgets/password.dart';
+import 'package:closr_prototype/src/ui/widgets/password_field.dart';
 import 'package:closr_prototype/src/utils/validators.dart';
 
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class SignupForm extends StatefulWidget {
 
 class _SignupFormState extends State<SignupForm> {
   TextEditingController _email;
-  TextEditingController _password;
+  // TextEditingController _password;
 
   final _formKey = GlobalKey<FormState>();
   final _passwordFieldKey = GlobalKey<FormFieldState<String>>();

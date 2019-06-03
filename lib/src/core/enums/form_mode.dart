@@ -1,1 +1,1 @@
-enum FormMode { LOGIN, SIGNUP }
+enum FormMode { Login, Signup }

@@ -16,7 +16,7 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   String _email;
   String _password;
-  String _errorMessage;
+  // String _errorMessage;
   final _formKey = GlobalKey<FormState>();
 
   User user = User();
