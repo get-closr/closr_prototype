@@ -1,26 +1,22 @@
-import 'package:closr_prototype/src/core/enums/view_state.dart';
-import 'package:closr_prototype/src/core/services/user_repository.dart';
-import 'package:flutter/material.dart';
+import 'package:closr_prototype/src/core/services/authentication_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 import '../../locator.dart';
+import 'base_model.dart';
 
-class HomeModel extends ChangeNotifier {
-  final UserRepository _userRepository = locator<UserRepository>();
+class HomeModel extends BaseModel {
+  final AuthenticationService _authenticationService = locator<AuthenticationService>();
 
-  ViewState _state = ViewState.Idle;
+  AuthenticationService get user => _authenticationService;
 
-  ViewState get state => _state;
-
-  UserRepository get user => _userRepository;
-
-  void setState(ViewState viewState) {
-    _state = viewState;
-    notifyListeners();
+  Future<FirebaseUser> getUser() async {
+    return _authenticationService.getUser();
   }
 
   Future<void> signOut() async {
     return Future.wait([
-      _userRepository.signOut(),
+      _authenticationService.signOut(),
     ]);
   }
 

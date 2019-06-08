@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings){
     switch(settings.name){
-      case '/login':
-        return MaterialPageRoute(builder: (_) => LoginView());
       case '/':
         return MaterialPageRoute(builder: (_) => HomeView());
+      case '/login':
+        return MaterialPageRoute(builder: (_) => LoginView());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

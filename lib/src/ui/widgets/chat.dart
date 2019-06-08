@@ -1,4 +1,4 @@
-import 'package:closr_prototype/src/core/services/user_repository.dart';
+import 'package:closr_prototype/src/core/services/authentication_service.dart';
 import 'package:closr_prototype/src/ui/shared/color.dart';
 import 'package:closr_prototype/src/ui/shared/theme.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -9,12 +9,11 @@ final _firestore = Firestore.instance;
 FirebaseUser loggedInUser;
 
 class ChatScreen extends StatefulWidget {
-  final UserRepository _userRepository;
+  final AuthenticationService _authenticationService;
 
-  ChatScreen({Key key, @required UserRepository userRepository})
-      : assert(userRepository != null),
-        _userRepository = userRepository,
-        super(key: key);
+  ChatScreen({Key key, @required AuthenticationService authenticationService})
+      : assert(authenticationService != null),
+        _authenticationService = authenticationService;
 
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -24,9 +23,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   String messageText;
 
-  get test => "abcd";
 
-  UserRepository get _userRepository => widget._userRepository;
+  AuthenticationService get _authenticationService => widget._authenticationService;
 
   @override
   void initState() {
@@ -36,7 +34,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void getCurrentUser() async {
     try {
-      final user = await _userRepository.getUser();
+      final user = await _authenticationService.getUser();
       if (user != null) {
         loggedInUser = user;
       }

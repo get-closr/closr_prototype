@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:closr_prototype/src/core/models/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -10,6 +11,8 @@ class UserRepository {
   UserRepository({FirebaseAuth firebaseAuth, GoogleSignIn googleSignin})
       : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
         _googleSignIn = googleSignin ?? GoogleSignIn();
+
+  StreamController<User> userController = StreamController<User>();
 
   Future<Null> _ensureLoggedIn() async {
     FirebaseUser firebaseUser = await _firebaseAuth.currentUser();
@@ -56,7 +59,7 @@ class UserRepository {
   }
 
 
-  Future<void> signUp({String email, String password}) async {
+  Future<FirebaseUser> signUp(String email, String password) async {
     FirebaseUser newuser = await _firebaseAuth.createUserWithEmailAndPassword(
       email: email,
       password: password,
@@ -64,6 +67,7 @@ class UserRepository {
 
     newuser.sendEmailVerification();
     _ensureLoggedIn();
+    return newuser;
   }
 
   Future<void> signOut() async {

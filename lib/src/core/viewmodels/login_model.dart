@@ -1,24 +1,19 @@
 import 'package:closr_prototype/src/core/enums/form_mode.dart';
 import 'package:closr_prototype/src/core/enums/view_state.dart';
-import 'package:closr_prototype/src/core/services/user_repository.dart';
+import 'package:closr_prototype/src/core/services/authentication_service.dart';
+import 'package:closr_prototype/src/core/viewmodels/base_model.dart';
 import 'package:closr_prototype/src/locator.dart';
-import 'package:flutter/foundation.dart';
+import 'package:closr_prototype/src/utils/validators.dart';
 
-class LoginModel extends ChangeNotifier {
-  final UserRepository _userRepository = locator<UserRepository>();
+class LoginModel extends BaseModel {
+  final AuthenticationService _authenticationService = locator<AuthenticationService>();
 
-  ViewState _state = ViewState.Idle;
+  String emailErrorMessage;
+  String passwordErrorMessage;
 
   FormMode _formMode = FormMode.Login;
 
-  ViewState get state => _state;
-
   FormMode get mode => _formMode;
-
-  void setState(ViewState viewState) {
-    _state = viewState;
-    notifyListeners();
-  }
 
   void setMode(FormMode formMode) {
     _formMode = formMode;
@@ -34,8 +29,22 @@ class LoginModel extends ChangeNotifier {
   }
 
   Future<bool> signIn(String email, String password) async {
+    if (email.isEmpty || !Validators.isValidEmail(email)) {
+      emailErrorMessage = "Email is not valid";
+      setState(ViewState.Idle);
+      return false;
+    }
+
+    if (password.isEmpty || !Validators.isValidPassword(password)) {
+      passwordErrorMessage = "Password is not valid";
+      setState(ViewState.Idle);
+      return false;
+    }
+
     setState(ViewState.Busy);
-    var user = await _userRepository.signInWithCredentials(email, password);
+
+    var user = await _authenticationService.login(email, password);
+
     if (user == null) {
       print("user does not exist");
       setState(ViewState.Idle);
@@ -45,9 +54,33 @@ class LoginModel extends ChangeNotifier {
     return true;
   }
 
+  Future<bool> signUp(String email, String password) async {
+    if (email.isEmpty || !Validators.isValidEmail(email)) {
+      emailErrorMessage = "Email is not valid";
+      setState(ViewState.Idle);
+      return false;
+    }
+
+    if (password.isEmpty || !Validators.isValidPassword(password)) {
+      passwordErrorMessage = "Password is not valid";
+      setState(ViewState.Idle);
+      return false;
+    }
+
+    setState(ViewState.Busy);
+    var user = await _authenticationService.signup(email, password);
+    if (user == null) {
+      print("User not created ");
+      setState(ViewState.Idle);
+      return false;
+    }
+    setState(ViewState.Idle);
+    return true;
+  }
+
   Future<bool> signInWithGoogle() async {
     setState(ViewState.Busy);
-    var user = await _userRepository.signInWithGoogle();
+    var user = await _authenticationService.signInWithGoogle();
     if (user == null) {
       print("user does not exist");
       setState(ViewState.Idle);

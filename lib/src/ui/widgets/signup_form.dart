@@ -1,39 +1,31 @@
-import 'package:closr_prototype/src/core/models/user.dart';
-import 'package:closr_prototype/src/core/viewmodels/login_model.dart';
 import 'package:closr_prototype/src/ui/shared/ui_helpers.dart';
 import 'package:closr_prototype/src/ui/widgets/password_field.dart';
-import 'package:closr_prototype/src/utils/validators.dart';
+
 
 import 'package:flutter/material.dart';
 
-class SignupForm extends StatefulWidget {
-  final LoginModel model;
+class SignUpForm extends StatelessWidget {
+  final TextEditingController email;
+  final TextEditingController password;
 
-  const SignupForm({this.model});
+  const SignUpForm({@required this.email, @required this.password});
 
   @override
-  _SignupFormState createState() => _SignupFormState();
+  Widget build(BuildContext context) {
+    return SignUpTextField(email, password);
+  }
 }
 
-class _SignupFormState extends State<SignupForm> {
-  TextEditingController _email;
-  // TextEditingController _password;
-
-  final _formKey = GlobalKey<FormState>();
+class SignUpTextField extends StatelessWidget {
+  final TextEditingController email;
+  final TextEditingController password;
   final _passwordFieldKey = GlobalKey<FormFieldState<String>>();
-  bool _formWasEditted = false;
 
-  User user = User();
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  SignUpTextField(this.email, this.password);
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -61,7 +53,7 @@ class _SignupFormState extends State<SignupForm> {
 
   Widget emailInput() {
     return TextFormField(
-      controller: _email,
+      controller: email,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.email),
@@ -70,11 +62,7 @@ class _SignupFormState extends State<SignupForm> {
       autovalidate: false,
       autocorrect: false,
       autofocus: false,
-      validator: (value) {
-        if (value.isEmpty) return "Email can't be empty";
-        if (!Validators.isValidEmail(value)) return "Email is not valid";
-      },
-      onSaved: (String value) => user.email = value,
+      onSaved: (String value) => email.text = value,
     );
   }
 
@@ -87,7 +75,7 @@ class _SignupFormState extends State<SignupForm> {
           onFieldSubmitted: (value) {},
         ),
         TextFormField(
-          enabled: user.password != null && user.password.isNotEmpty,
+          enabled: password.text != null && password.text.isNotEmpty,
           decoration: InputDecoration(
             labelText: "Confirm Password",
             icon: Icon(Icons.lock_outline),
@@ -101,7 +89,7 @@ class _SignupFormState extends State<SignupForm> {
   }
 
   String _validatePassword(String value) {
-    _formWasEditted = true;
+    // _formWasEditted = true;
     final FormFieldState<String> passwordField = _passwordFieldKey.currentState;
     if (passwordField.value == null || passwordField.value.isEmpty)
       return 'Please enter a password.';
