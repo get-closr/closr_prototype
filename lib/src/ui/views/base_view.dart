@@ -26,6 +26,12 @@ class _BaseViewState<T extends BaseModel> extends State<BaseView<T>> {
   }
 
   @override
+  void dispose() {
+    model.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<T>(
       builder: (context) => locator<T>(),
