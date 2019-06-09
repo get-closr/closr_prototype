@@ -1,5 +1,6 @@
 import 'package:closr_prototype/src/ui/shared/ui_helpers.dart';
-import 'package:closr_prototype/src/ui/widgets/password_field.dart';
+import 'package:closr_prototype/src/ui/widgets/form/password_field.dart';
+
 
 
 import 'package:flutter/material.dart';

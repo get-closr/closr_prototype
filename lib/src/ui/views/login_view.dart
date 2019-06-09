@@ -1,10 +1,9 @@
 import 'package:closr_prototype/src/core/enums/form_mode.dart';
 import 'package:closr_prototype/src/core/enums/view_state.dart';
 import 'package:closr_prototype/src/core/viewmodels/login_model.dart';
-import 'package:closr_prototype/src/ui/widgets/login_form.dart';
-import 'package:closr_prototype/src/ui/widgets/signup_form.dart';
+import 'package:closr_prototype/src/ui/widgets/form/login_form.dart';
+import 'package:closr_prototype/src/ui/widgets/form/signup_form.dart';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

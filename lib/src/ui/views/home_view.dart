@@ -1,13 +1,18 @@
 import 'package:closr_prototype/src/core/enums/view_state.dart';
 import 'package:closr_prototype/src/core/viewmodels/home_model.dart';
-import 'package:closr_prototype/src/ui/widgets/chat.dart';
+import 'package:closr_prototype/src/ui/widgets/chat/chat.dart';
 import 'package:flutter/material.dart';
+// import 'package:closr_prototype/src/ui/widgets/buttons/radial_menu.dart';
+// import 'package:closr_prototype/src/ui/widgets/buttons/unicorn.dart';
 
 import 'base_view.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({Key key}) : super(key: key);
+class HomeView extends StatefulWidget {
+  @override
+  _HomeViewState createState() => _HomeViewState();
+}
 
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return BaseView<HomeModel>(
@@ -38,13 +43,15 @@ class HomeView extends StatelessWidget {
             ),
             body: model.state == ViewState.Busy
                 ? Center(child: CircularProgressIndicator())
-                : SafeArea(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ChatScreen(
-                        authenticationService: model.user,
+                : SizedBox.expand(
+                    child: Stack(children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ChatScreen(
+                          authenticationService: model.user,
+                        ),
                       ),
-                    ),
+                    ]),
                   ),
           ),
     );
