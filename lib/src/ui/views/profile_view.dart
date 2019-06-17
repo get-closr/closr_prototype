@@ -21,17 +21,17 @@ class ProfileView extends StatelessWidget {
               ListTile(
                 onTap: () {},
                 leading: Icon(Icons.edit),
-                title: myTitle(text: "My Event"),
+                title: MyTitle(text: "My Event"),
               ),
               ListTile(
                 onTap: () {},
                 leading: Icon(Icons.group),
-                title: myTitle(text: "My Community"),
+                title: MyTitle(text: "My Community"),
               ),
               ListTile(
                 onTap: () {},
                 leading: Icon(Icons.settings),
-                title: myTitle(text: "My Account"),
+                title: MyTitle(text: "My Account"),
               ),
             ],
           ),

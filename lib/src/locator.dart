@@ -6,9 +6,8 @@ import 'core/viewmodels/home_model.dart';
 
 GetIt locator = GetIt();
 
-void setupLocator() {
+Future setupLocator() async {
   locator.registerFactory(() => AuthenticationService());
-
   locator.registerFactory(() => LoginModel());
   locator.registerFactory(() => HomeModel());
 }

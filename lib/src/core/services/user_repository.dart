@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:closr_prototype/src/core/models/user.dart';
+// import 'package:closr_prototype/src/core/models/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -12,7 +12,7 @@ class UserRepository {
       : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
         _googleSignIn = googleSignin ?? GoogleSignIn();
 
-  StreamController<User> userController = StreamController<User>();
+  // StreamController<User> userController = StreamController<User>();
 
   Future<Null> _ensureLoggedIn() async {
     FirebaseUser firebaseUser = await _firebaseAuth.currentUser();

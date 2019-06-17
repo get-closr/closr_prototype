@@ -68,7 +68,7 @@ class LoginModel extends BaseModel {
     }
 
     setState(ViewState.Busy);
-    var user = await _authenticationService.signup(email, password);
+    var user = await _authenticationService.signUp(email, password);
     if (user == null) {
       print("User not created ");
       setState(ViewState.Idle);
@@ -80,7 +80,7 @@ class LoginModel extends BaseModel {
 
   Future<bool> signInWithGoogle() async {
     setState(ViewState.Busy);
-    var user = await _authenticationService.signInWithGoogle();
+    var user = await _authenticationService.googleSignIn();
     if (user == null) {
       print("user does not exist");
       setState(ViewState.Idle);

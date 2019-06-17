@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class mySubtitle extends StatelessWidget {
-  const mySubtitle({
+class MySubtitle extends StatelessWidget {
+  const MySubtitle({
     Key key,
     @required this.text,
   }) : super(key: key);
@@ -16,8 +16,8 @@ class mySubtitle extends StatelessWidget {
   }
 }
 
-class myTitle extends StatelessWidget {
-  const myTitle({
+class MyTitle extends StatelessWidget {
+  const MyTitle({
     Key key,
     @required this.text,
   }) : super(key: key);

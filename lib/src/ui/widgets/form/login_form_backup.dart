@@ -1,4 +1,3 @@
-import 'package:closr_prototype/src/core/models/user.dart';
 import 'package:closr_prototype/src/core/viewmodels/login_model.dart';
 import 'package:closr_prototype/src/ui/shared/ui_helpers.dart';
 import 'package:closr_prototype/src/utils/validators.dart';
@@ -19,7 +18,7 @@ class _LoginFormState extends State<LoginForm> {
   String _errorMessage;
   final _formKey = GlobalKey<FormState>();
 
-  User user = User();
+  // User user = User();
 
   @override
   void initState() {

@@ -1,10 +1,12 @@
 import 'package:closr_prototype/src/core/enums/form_mode.dart';
 import 'package:closr_prototype/src/core/enums/view_state.dart';
 import 'package:closr_prototype/src/core/viewmodels/login_model.dart';
+import 'package:closr_prototype/src/ui/shared/color.dart';
 import 'package:closr_prototype/src/ui/widgets/form/login_form.dart';
 import 'package:closr_prototype/src/ui/widgets/form/signup_form.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'base_view.dart';
@@ -22,51 +24,50 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return BaseView<LoginModel>(
       builder: (context, model, child) => Scaffold(
-            appBar: PreferredSize(
-              child: AppBar(
-                brightness: Brightness.light,
-                backgroundColor: Colors.transparent,
-                elevation: 0.0,
-                automaticallyImplyLeading: false,
-              ),
-              preferredSize: Size.fromHeight(0),
-            ),
-            body: Padding(
-              padding: EdgeInsets.all(50),
-              child: Center(
-                child: model.state == ViewState.Busy
-                    ? CircularProgressIndicator()
-                    : Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: <Widget>[
-                          Flexible(
-                            flex: 1,
-                            child: Container(
-                                child: Image.asset(
-                              'assets/images/Closr_logo.png',
-                            )),
-                          ),
-                          model.mode == FormMode.Login
-                              ? LoginFormTest(
-                                  email: _email,
-                                  password: _passw,
-                                  emailValidationMessage:
-                                      model.emailErrorMessage,
-                                  passwordValidationMessage:
-                                      model.passwordErrorMessage)
-                              : SignUpForm(
-                                  email: _email,
-                                  password: _passw,
-                                ),
-                          showPrimaryButton(context, model),
-                          googleLoginButton(context, model),
-                          switchButton(model),
-                        ],
-                      ),
-              ),
-            ),
+        appBar: PreferredSize(
+          child: AppBar(
+            brightness: Brightness.light,
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            automaticallyImplyLeading: false,
           ),
+          preferredSize: Size.fromHeight(0),
+        ),
+        body: Padding(
+          padding: EdgeInsets.all(50),
+          child: Center(
+            child: model.state == ViewState.Busy
+                ? SpinKitDualRing(color: kClosrPink100)
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Flexible(
+                        flex: 1,
+                        child: Container(
+                            child: Image.asset(
+                          'assets/images/Closr_logo.png',
+                        )),
+                      ),
+                      model.mode == FormMode.Login
+                          ? LoginFormTest(
+                              email: _email,
+                              password: _passw,
+                              emailValidationMessage: model.emailErrorMessage,
+                              passwordValidationMessage:
+                                  model.passwordErrorMessage)
+                          : SignUpForm(
+                              email: _email,
+                              password: _passw,
+                            ),
+                      showPrimaryButton(context, model),
+                      googleLoginButton(context, model),
+                      switchButton(model),
+                    ],
+                  ),
+          ),
+        ),
+      ),
     );
   }
 
