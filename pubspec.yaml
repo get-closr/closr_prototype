@@ -1,5 +1,5 @@
 name: closr_prototype
-description: Closr wants to help digital relationships be more fun and intimate.
+description: Closr makes digital relationships be more fun and intimate.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -26,6 +26,7 @@ dependencies:
   # shared_preferences: ^0.5.3+1
   keyboard_visibility: ^0.5.6
   flutter_spinkit: ^3.1.0
+  random_string: ^0.0.2
 
   provider: ^3.0.0+1
   get_it: ^1.0.3

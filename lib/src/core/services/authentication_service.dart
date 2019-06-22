@@ -1,6 +1,5 @@
 import 'dart:async';
 
-// import 'package:closr_prototype/src/core/services/api.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
