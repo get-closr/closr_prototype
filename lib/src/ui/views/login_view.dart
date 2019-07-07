@@ -24,6 +24,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return BaseView<LoginModel>(
       builder: (context, model, child) => Scaffold(
+        resizeToAvoidBottomPadding: false,
         appBar: PreferredSize(
           child: AppBar(
             brightness: Brightness.light,
